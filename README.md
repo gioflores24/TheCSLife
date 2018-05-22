@@ -1,2 +1,2 @@
 # TheCSLife
-# Hello World! 
+*Hello World!* Welcome to the _TheCSLife_
