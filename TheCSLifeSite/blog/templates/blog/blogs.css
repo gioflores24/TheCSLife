@@ -1,0 +1,32 @@
+.enlarge
+{
+    transition: .5s ease;
+}
+.enlarge:hover
+{
+    color: rgb(200,0,0);
+    transition: .5s ease;
+    font-size: 18px ;
+}
+.custom
+{
+    transition: .5s ease;
+}
+.custom:hover
+{
+    color: white !important;
+    transition: .5s ease;
+    font-size: 115%;
+}
+.name
+{
+    color: lightblue !important;
+    transition: .5s ease;
+    font-size: 100%;
+}
+.name:hover
+{
+    transition: .5s ease;
+    color: #00CED1 !important;
+    font-size: 150%;
+}
