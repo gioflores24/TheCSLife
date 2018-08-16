@@ -41,11 +41,11 @@
         <div class="container">
             {% for blog in blogs %}
             <div class="row">
-                <a href="#"><h4 style="font-family: Times; margin-left: 15px">{{ blog.title }}</h4></a> 
+                <a href="#"><h4 style="font-family: Times; margin-left: 15px">{{ blog.title }}</h4></a>
                 <h6 style="padding-left: 40px; padding-top: 5px"class="text-muted">Published: {{ blog.publication_date }}</h6>
             </div>
             <img class="card-img-top" src="{{ blog.image.url }}" alt="Card image cap" style="height: 300px; width: 500px; margin-bottom:30px">
-                <p>{{ blog.body }}</p>
+                <p>{{ blog.summary }}</p>
             <hr style="padding: 50px"/>
             <br />
             {% endfor %}
