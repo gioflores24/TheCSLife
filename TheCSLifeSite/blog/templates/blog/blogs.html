@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -10,56 +10,66 @@
     <title>TheCSLife</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
 
 <body>
-   <header>
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-              <a class="navbar-brand name" href="#">TheCSLife</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ml-auto">
-                  <a class="nav-item nav-link custom" href="{% url 'home' %}">Home</a>
-                  <a class="nav-item nav-link custom active" href="{% url 'blog' %}">Blog</a>
-                  <a class="nav-item nav-link custom" href="{% url 'resume' %}">Resume</a>
-                  <a class="nav-item nav-link custom" href="#">About Me</a>
-                </div>
-              </div>
-          </nav>
-    </header>
-    <main role="main">
-        <div class="container">
-            <h1 style="font-family: Monaco" class="text-center pt-3">My Blog</h1>
-            <br />
-            <br />
-            <h2 style="font-family: Cobalt">Most Recent Posts</h2>
-            <hr />
-        </div>
-        <div class="container">
-            {% for blog in blogs %}
-            <div class="row">
-                <a href="#"><h4 style="font-family: Times; margin-left: 15px">{{ blog.title }}</h4></a>
-                <h6 style="padding-left: 40px; padding-top: 5px"class="text-muted">Published: {{ blog.publication_date }}</h6>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand name" href="#">TheCSLife</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link custom" href="{% url 'home' %}">Home</a>
+                <a class="nav-item nav-link custom active" href="{% url 'blog' %}">Blog</a>
+                <a class="nav-item nav-link custom" href="{% url 'resume' %}">Resume</a>
+                <a class="nav-item nav-link custom" href="#">About Me</a>
             </div>
-            <img class="card-img-top" src="{{ blog.image.url }}" alt="Card image cap" style="height: 300px; width: 500px; margin-bottom:30px">
-                <p>{{ blog.summary }}</p>
-            <hr style="padding: 50px"/>
-            <br />
-            {% endfor %}
-
         </div>
-    </main>
-
-    <footer class="text-muted">
-        <div class="container text-center">
-            <p>© Giovanni Flores {% now "Y" %}</p>
+    </nav>
+</header>
+<main role="main">
+    <div class="container">
+        <h1 style="font-family: Monaco" class="text-center pt-3">My Blog</h1>
+        <br/>
+        <br/>
+        <h2 style="font-family: Cobalt">Most Recent Posts</h2>
+        <hr/>
+    </div>
+    <div class="container">
+        {% for blog in blogs %}
+        <div class="row">
+            <a href="#"><h4 style="font-family: Times; margin-left: 15px">{{ blog.title }}</h4></a>
+            <h6 style="padding-left: 40px; padding-top: 5px" class="text-muted">
+                Published: {{ blog.pub_date_rounded }}</h6>
         </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <img class="card-img-top" src="{{ blog.image.url }}" alt="Card image cap"
+             style="height: 300px; width: 500px; margin-bottom:30px">
+        <p>{{ blog.summary }}</p>
+        <hr style="padding: 50px"/>
+        <br/>
+        {% endfor %}
+
+    </div>
+</main>
+
+<footer class="text-muted">
+    <div class="container text-center">
+        <p>© Giovanni Flores {% now "Y" %}</p>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
 </body>
 </html>

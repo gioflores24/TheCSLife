@@ -13,5 +13,8 @@ class Blog(models.Model):
     def summary(self):
         return self.body[:100]
 
+    def pub_date_rounded(self):
+        return self.publication_date.strftime('%b %e %Y')
+
     def __str__(self):
         return self.title
