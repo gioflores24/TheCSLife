@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load staticfiles %}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link custom" href="{% url 'home' %}">Home</a>
-                <a class="nav-item nav-link custom" href="{% url 'blog' %}">Blog</a>
+                <a class="nav-item nav-link custom" href="{% url 'blog:blog' %}">Blog</a>
                 <a class="nav-item nav-link custom active" href="{% url 'resume' %}">Resume</a>
                 <a class="nav-item nav-link custom" href="#">About Me</a>
             </div>
@@ -35,6 +36,8 @@
 </header>
 <main role="main">
     <div class="container">
+        <a style="position: relative; margin-left: 400px;" href="{% static 'gflores_resume.pdf' %}">View my resume as
+            PDF</a>
         {% for resume in resumes %}
         <div class="text-center">
             <p style="margin-top: 40px"><strong>{{ resume.description }}</strong></p>
