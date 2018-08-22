@@ -36,8 +36,10 @@
 </header>
 <main role="main">
     <div class="container">
-        <a style="position: relative; margin-left: 400px;" href="{% static 'gflores_resume.pdf' %}">View my resume as
-            PDF</a>
+        <div class="text-center bg-light">
+            <a href="{% static 'gflores_resume.pdf' %}">View my resume as
+                PDF</a>
+        </div>
         {% for resume in resumes %}
         <div class="text-center">
             <p style="margin-top: 40px"><strong>{{ resume.description }}</strong></p>
